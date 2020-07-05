@@ -3,17 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <title>JS Clock</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
-    <div class="clock">
-      <div class="clock-face">
-        <div class="hand hour-hand"></div>
-        <div class="hand min-hand"></div>
-        <div class="hand second-hand"></div>
+    <div class="container">
+      <div class="row">
+        <div class="clock col-12 col-sm-6 offset-sm-3">
+          <div class="clock-face">
+            <div class="hand hour-hand"></div>
+            <div class="hand min-hand"></div>
+            <div class="hand second-hand"></div>
+            <div class="clock-pivot"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-sm-5 offset-sm-3">
+          <button type="button" class="btn btn-light btn-block  ml-sm-5"><h2>Set Alarm</h2></button>
+        </div>
       </div>
     </div>
+
+
+  <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="js/scripts.js"></script>
 </body>
 </html>

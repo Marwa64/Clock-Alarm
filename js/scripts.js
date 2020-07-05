@@ -1,6 +1,4 @@
-var hourDegree = 90;
-var minuteDegree = 90;
-var secondDegree = 90;
+var hourDegree, minuteDegree, secondDegree;
 
 function moveHands(){
   var now = new Date();
@@ -20,5 +18,26 @@ function moveHands(){
   secondDegree = 90 + (seconds * 6);
   secondsHand.style.transform = `rotate(${secondDegree}deg)`;
   console.log(seconds);
+
+  if (hour >= 6){
+    document.querySelector("body").style.backgroundImage = "url('img/background1.jpg')";
+    document.querySelector(".hour-hand").style.background = "black";
+    document.querySelector(".min-hand").style.background = "black";
+    document.querySelector(".clock-pivot").style.background = "black";
+  }
+
+  if (hour >= 16){
+    document.querySelector("body").style.backgroundImage = "url('img/background2.jpg')";
+    document.querySelector(".hour-hand").style.background = "black";
+    document.querySelector(".min-hand").style.background = "black";
+    document.querySelector(".clock-pivot").style.background = "black";
+  }
+
+  if (hour >= 20 || hour < 6){
+    document.querySelector("body").style.backgroundImage = "url('img/background3.jpg')";
+    document.querySelector(".hour-hand").style.background = "white";
+    document.querySelector(".min-hand").style.background = "white";
+    document.querySelector(".clock-pivot").style.background = "white";
+  }
 }
 setInterval(moveHands, 1000);

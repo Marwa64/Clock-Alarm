@@ -1,49 +1,48 @@
-html {
-  background-image: url("../img/background1.jpg");
+body {
   background-size: cover;
   background-attachment: fixed;
-  font-family: 'helvetica neue';
-  text-align: center;
-  font-size: 10px; }
-
-body {
-  margin: 0;
-  font-size: 2rem;
-  display: flex;
-  flex: 1;
-  min-height: 100vh;
-  align-items: center; }
+  background-position: center; }
 
 .clock {
   width: 30rem;
-  height: 30rem;
+  height: 35rem;
   border: 20px solid white;
   border-radius: 100%;
   margin: 50px auto;
   position: relative;
   padding: 2rem;
   box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #EFEFEF, inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2); }
-
-.clock-face {
-  position: relative;
-  width: 100%;
-  height: 100%; }
+  .clock .clock-face {
+    position: relative;
+    width: 100%;
+    height: 100%; }
+  .clock .clock-pivot {
+    width: 11px;
+    height: 11px;
+    background-color: black;
+    position: absolute;
+    top: 49%;
+    left: 49%;
+    border-radius: 50%; }
 
 .hand {
   width: 50%;
-  height: 6px;
-  background: black;
+  height: 4px;
   position: absolute;
   top: 50%;
   transform-origin: 100%;
   transform: rotate(90deg);
-  transition: all 1s; }
+  transition: all 0.05s;
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1); }
 
 .hour-hand {
-  background-color: black; }
+  width: 35%;
+  background-color: black;
+  left: 16%; }
 
 .min-hand {
-  background-color: red; }
+  background-color: black; }
 
 .second-hand {
-  background-color: green; }
+  height: 2px;
+  background-color: red; }
