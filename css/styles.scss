@@ -1,3 +1,5 @@
+$grey: #9ea5b1;
+$lg-grey: #f1f1f1;
 
 body {
   background-size: cover;
@@ -25,11 +27,11 @@ body {
       height: 100%;
     }
     .clock-pivot{
-      width: 11px;
-      height: 11px;
+      width: 18px;
+      height: 18px;
       background-color: black;
       position: absolute;
-      top: 49%;
+      top: 48.5%;
       left: 49%;
       border-radius: 50%;
     }
@@ -48,7 +50,7 @@ body {
 .hour-hand{
   width: 35%;
   background-color: black;
-  left: 16%
+  left: 16%;
 }
 .min-hand{
   background-color: black;
@@ -56,4 +58,18 @@ body {
 .second-hand{
   height: 2px;
   background-color: red;
+}
+.modal{
+  .modal-header{
+    background-color: $grey;
+    color: white;
+  }
+  .modal-body{
+    background-color: $lg-grey;
+  }
+}
+
+.alert{
+  visibility: hidden;
+  font-size: 18px;
 }

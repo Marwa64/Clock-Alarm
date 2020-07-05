@@ -41,3 +41,46 @@ function moveHands(){
   }
 }
 setInterval(moveHands, 1000);
+
+var alarmBtn = document.querySelector("#alarmBtn");
+alarmBtn.addEventListener('click', function(){
+  $("#alarmModal").modal("show");
+})
+
+var alarmHour = "", alarmMinute="";
+
+function setAlarm(){
+  alarmHour = "";
+  alarmMinute = "";
+  var seperator = false;
+  var timeSet = document.querySelector("#time").value;
+
+  for (i = 0; i < timeSet.length; i++){
+    if (timeSet[i] != ":"){
+      if (seperator === false){
+        alarmHour += timeSet[i];
+      } else {
+        alarmMinute += timeSet[i];
+      }
+    } else {
+      seperator = true;
+    }
+  }
+  var message = document.querySelector(".alert");
+  message.innerHTML = "Alarm set to <b>" + timeSet + "</b>";
+  message.style.visibility = "visible";
+}
+
+function alarm(){
+  var now = new Date();
+  var currentHour = now.getHours();
+  var currentMinutes = now.getMinutes();
+  if (alarmHour == currentHour && alarmMinute == currentMinutes){
+    var sound = document.querySelector("audio");
+    sound.play();
+    var message = document.querySelector(".alert");
+    message.innerHTML = "";
+    message.style.visibility = "hidden";
+  }
+}
+setInterval(alarm, 2000);

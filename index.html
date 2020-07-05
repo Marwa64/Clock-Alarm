@@ -9,6 +9,25 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <div class="modal fade" id="alarmModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="modal-title"><h3>Alarm</h3></span>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-12 col-sm-3"><label class="mt-1"><b>Time:</b></label></div>
+              <div class="col-12 col-sm-6"> <input id="time" class="form-control" type="time"> </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-3 offset-sm-4 mt-4"> <button id="saveBtn" data-dismiss="modal" onclick="setAlarm()" class="btn btn-primary btn-block" type="button" name="button"><b>Save</b></button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="container">
       <div class="row">
         <div class="clock col-12 col-sm-6 offset-sm-3">
@@ -22,11 +41,17 @@
       </div>
       <div class="row">
         <div class="col-12 col-sm-5 offset-sm-3">
-          <button type="button" class="btn btn-light btn-block  ml-sm-5"><h2>Set Alarm</h2></button>
+          <button id="alarmBtn" type="button" class="btn btn-light btn-block  ml-sm-5"><h2>Set Alarm</h2></button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-sm-8 offset-sm-2 mt-4">
+          <span class="alert alert-success btn-block text-center"></span>
         </div>
       </div>
     </div>
 
+    <audio src="DrumKit.webm"></audio>
 
   <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
